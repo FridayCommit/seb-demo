@@ -51,6 +51,8 @@ spec:
                     username:
                       type: string
                       description: "The username in GitHub"
+                      minLength: 1
+                      maxLength: 39 # Seems to be the max (https://docs.github.com/en/enterprise-cloud@latest/admin/identity-and-access-management/iam-configuration-reference/username-considerations-for-external-authentication)
                     permission:
                       type: string
                       description: "The permission to be applied to the user for the repo. Must be one of pull, push, maintain, triage or admin or the name of an existing custom repository role within the organization for organization-owned repositories"
