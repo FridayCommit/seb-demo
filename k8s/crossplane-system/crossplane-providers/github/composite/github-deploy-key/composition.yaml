@@ -1,0 +1,39 @@
+apiVersion: apiextensions.crossplane.io/v1
+kind: Composition
+metadata:
+  name: github-repo
+spec:
+  resources:
+    - name: github-repo
+      base:
+        apiVersion: tf.upbound.io/v1beta1
+        kind: Workspace
+        spec:
+          providerConfigRef:
+            name: terraform-github
+          forProvider:
+            source: Remote
+            module: git::https://github.com/FridayCommit/seb-demo-terraform-modules?ref=main
+            entrypoint: modules/github-repo
+            # Comments here for clarity. These will be filled in by the patches below
+            # varmap:
+              # Required
+              # repo_name: tf-test-flag
+              # users: 
+              #   - username: my-github-username
+              #     permission: pull
+      patches:
+        - type: FromCompositeFieldPath
+          fromFieldPath: "spec.repoName"
+          toFieldPath: "spec.forProvider.varmap.repo_name"
+        - type: FromCompositeFieldPath
+          fromFieldPath: "spec.users"
+          toFieldPath: "spec.forProvider.varmap.users"
+      readinessChecks:
+        - matchCondition:
+            status: 'True'
+            type: Ready
+          type: MatchCondition
+  compositeTypeRef:
+    apiVersion: snowsoftware.io/v1alpha1
+    kind: xGithubRepo

@@ -1,0 +1,26 @@
+apiVersion: tf.upbound.io/v1beta1
+kind: ProviderConfig
+metadata:
+  name: terraform-github
+spec:
+  configuration: |
+    terraform {
+      backend "kubernetes" {
+        secret_suffix = "providerconfig-github"
+        namespace = "crossplane-system"
+        in_cluster_config = true
+      }
+    }
+    provider "tls" {}
+    provider "time" {}
+    provider "github" {
+      owner = "FridayCommit"
+      token = jsondecode(file("${path.module}/github-creds.json"))["token"]
+    }
+  credentials:
+    - filename: github-creds.json
+      source: Secret
+      secretRef:
+        key: credentials
+        name: github-creds
+        namespace: crossplane-system

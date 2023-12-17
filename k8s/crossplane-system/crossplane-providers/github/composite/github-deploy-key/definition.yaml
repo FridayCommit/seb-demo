@@ -1,0 +1,49 @@
+apiVersion: apiextensions.crossplane.io/v1
+kind: CompositeResourceDefinition
+metadata:
+  name: xgithubrepo.snowsoftware.io
+spec:
+  group: snowsoftware.io
+  names:
+    kind: xGithubRepo
+    plural: xgithubrepo
+  claimNames:
+    kind: GithubRepo
+    plural: githubrepo
+  versions:
+  - name: v1alpha1
+    served: true
+    referenceable: true
+    schema:
+      openAPIV3Schema:
+        type: object
+        properties:
+          spec:
+            type: object
+            required:
+              - repoName
+              - users
+            properties:
+              repoName:
+                type: string
+                description: "The name of the GitHub repository"
+              users:
+                type: array
+                description: "A list of users with permissions to the repo"
+                example:
+                  - username: "username-1"
+                    permission: "pull"
+                  - username: "username-2"
+                    permission: "maintain"
+                items:
+                  type: object
+                  required:
+                    - username
+                    - permission
+                  properties:
+                    username:
+                      type: string
+                      description: "The username in GitHub"
+                    permission:
+                      type: string
+                      description: "The permission to be applied to the user for the repo. Must be one of pull, push, maintain, triage or admin or the name of an existing custom repository role within the organization for organization-owned repositories"

@@ -1,0 +1,14 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: crossplane-system
+helmCharts:
+- name: crossplane
+  repo: https://charts.crossplane.io/stable
+  version: 1.14.2
+  releaseName: crossplane
+  includeCRDs: true
+  valuesFile: crossplane-values.yaml
+resources:
+  - namespace.yaml
+  - crossplane-providers/terraform
+  - crossplane-providers/github
