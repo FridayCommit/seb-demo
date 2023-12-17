@@ -38,6 +38,10 @@ spec:
                     permission: "pull"
                   - username: "username-2"
                     permission: "maintain"
+                # https://kubernetes.io/docs/tasks/extend-kubernetes/custom-resources/custom-resource-definitions/#validation-rules
+                x-kubernetes-validations:
+                  - rule: "self.all(x, self.exists_one(y, x.username == y.username))"
+                    message: "Usernames must be unique throughout the users"
                 items:
                   type: object
                   required:
