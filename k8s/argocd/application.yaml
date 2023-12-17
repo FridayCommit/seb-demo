@@ -1,0 +1,29 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: argocd
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/FridayCommit/seb-demo.git
+    targetRevision: HEAD
+    path: k8s/argocd
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: argocd
+# ---
+# apiVersion: argoproj.io/v1alpha1
+# kind: Application
+# metadata:
+#   name: crossplane-system
+#   namespace: argocd
+# spec:
+#   project: default
+#   source:
+#     repoURL: https://github.com/FridayCommit/seb-demo.git
+#     targetRevision: HEAD
+#     path: k8s/crossplane-system
+#   destination:
+#     server: https://kubernetes.default.svc
+#     namespace: crossplane-system
