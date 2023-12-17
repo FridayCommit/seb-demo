@@ -7,3 +7,5 @@ spec:
   users:
     - username: "felixlut"
       permission: "pull"
+    - username: "ViktorLindgren95"
+      permission: "admin"
