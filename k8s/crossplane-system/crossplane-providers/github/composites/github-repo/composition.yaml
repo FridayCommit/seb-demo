@@ -13,7 +13,7 @@ spec:
             name: terraform-github
           forProvider:
             source: Remote
-            module: git::https://github.com/FridayCommit/seb-demo-terraform-modules?ref=main
+            module: git::https://github.com/FridayCommit/seb-demo?ref=main
             entrypoint: modules/github-repo
             # Comments here for clarity. These will be filled in by the patches below
             # varmap:
