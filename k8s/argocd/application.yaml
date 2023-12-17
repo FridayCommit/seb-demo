@@ -12,6 +12,10 @@ spec:
   destination:
     server: https://kubernetes.default.svc
     namespace: argocd
+  # This doesn't actually do anything, since ArgoCD needs to exists before it can create any namespaces. Leaving this in to confom with the other applications (this could probably be an applicationset anyways)
+  syncPolicy:
+    syncOptions:
+    - CreateNamespace=true # Namespace Auto-Creation ensures that namespace specified as the application destination exists in the destination cluster.
 ---
 apiVersion: argoproj.io/v1alpha1
 kind: Application
@@ -27,6 +31,9 @@ spec:
   destination:
     server: https://kubernetes.default.svc
     namespace: crossplane-system
+  syncPolicy:
+    syncOptions:
+    - CreateNamespace=true # Namespace Auto-Creation ensures that namespace specified as the application destination exists in the destination cluster.
 ---
 apiVersion: argoproj.io/v1alpha1
 kind: Application
@@ -42,3 +49,6 @@ spec:
   destination:
     server: https://kubernetes.default.svc
     namespace: end-user
+  syncPolicy:
+    syncOptions:
+    - CreateNamespace=true # Namespace Auto-Creation ensures that namespace specified as the application destination exists in the destination cluster.

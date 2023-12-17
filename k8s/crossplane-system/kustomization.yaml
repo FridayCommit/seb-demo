@@ -9,6 +9,5 @@ helmCharts:
   includeCRDs: true
   valuesFile: crossplane-values.yaml
 resources:
-  - namespace.yaml
   - crossplane-providers/terraform
   - crossplane-providers/github
