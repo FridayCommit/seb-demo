@@ -33,6 +33,7 @@ spec:
               users:
                 type: array
                 description: "A list of users with permissions to the repo"
+                maxItems: 100
                 example:
                   - username: "username-1"
                     permission: "pull"
