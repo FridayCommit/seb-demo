@@ -59,6 +59,8 @@ kustomize build --enable-helm k8s | envsubst | yq 'select(.kind == "Secret")'
 
 ### Applying k8s config
 
+You hav 2 choices here, either run `kubectl` as described below, or proceed by using ArgoCD and the bootstrapped applications. Do note that if you use the ArgoCD applications, the secrets will be dumy values that you will have to overwrite yourself (eg [`github-creds.yaml`](/k8s/crossplane-system/crossplane-providers/github/github-creds.yaml) is using `${GITHUB}`, which in the ``kubectl`` solution can be overwritten with [`envsubst`](https://www.gnu.org/software/gettext/manual/html_node/envsubst-Invocation.html)).
+
 For actually applying it all you can run the command below, but do make sure first you are actually connected to the local cluster, and not an actual AKS cluster. Do note that it will take a couple of repeated invokations before it all is ready. This is because there are CRD:s that takes some time to be installed correctly. Continue running the commads a few times over a minute or so and it should all be working:
 
 ```sh
