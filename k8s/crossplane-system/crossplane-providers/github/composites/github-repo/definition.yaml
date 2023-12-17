@@ -27,6 +27,9 @@ spec:
               repoName:
                 type: string
                 description: "The name of the GitHub repository"
+                pattern: ^[a-z0-9]+(-[a-z0-9]+)*$
+                minLength: 1
+                maxLength: 64
               users:
                 type: array
                 description: "A list of users with permissions to the repo"
