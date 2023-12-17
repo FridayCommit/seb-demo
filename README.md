@@ -23,9 +23,6 @@ go install sigs.k8s.io/kustomize/kustomize/v5@latest
 
 Not required, but a great tool to use in [``OpenLens``](https://github.com/MuhammedKalkan/OpenLens) (there is a payed version of `Lens` as well, but that costs money). It's basically an Kubernetes IDE, which is a godsend when working with Kubernetes. Personally I installed it with `Scoop`, but there are other options listed [here](https://github.com/MuhammedKalkan/OpenLens#installation)
 
-> [!WARNING]
-> There are a bunch of Crossplane XRD:s in here that are very similar to the ones in [`devops-crossplane-system-deploy`](https://github.com/SnowSoftwareGlobal/devops-crossplane-system-deploy), but not entirely identical. This repo is meant to facilitate simple local development, not be up to date with everything in that repo. The resources are presented as is.
-
 ## Bootstrap Cluster
 
 ### Create Cluster
