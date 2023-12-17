@@ -1,0 +1,8 @@
+# Helm charts
+charts
+
+# Local debug files
+out.yaml
+
+# .git-credentials
+.git-credentials
