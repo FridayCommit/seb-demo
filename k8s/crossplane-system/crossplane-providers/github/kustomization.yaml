@@ -3,5 +3,5 @@ kind: Kustomization
 resources:
   - provider-config.yaml
   - github-creds.yaml
-  - composite/github-deploy-key/composition.yaml
-  - composite/github-deploy-key/definition.yaml
+commonAnnotations:
+  argocd.argoproj.io/sync-wave: "1"

@@ -3,3 +3,5 @@ kind: Kustomization
 namespace: crossplane-system
 resources:
   - provider.yaml
+commonAnnotations:
+  argocd.argoproj.io/sync-wave: "1"
