@@ -3,6 +3,7 @@ kind: Kustomization
 resources:
   - provider-config.yaml
   - github-creds.yaml
+  - composites
 commonAnnotations:
   argocd.argoproj.io/sync-wave: "1"
   argocd.argoproj.io/sync-options: SkipDryRunOnMissingResource=true
