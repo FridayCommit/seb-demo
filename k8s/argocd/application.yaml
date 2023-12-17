@@ -27,3 +27,18 @@ spec:
   destination:
     server: https://kubernetes.default.svc
     namespace: crossplane-system
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: end-user
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/FridayCommit/seb-demo.git
+    targetRevision: HEAD
+    path: k8s/end-user
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: end-user
