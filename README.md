@@ -37,7 +37,7 @@ This command will create a new `Kind` cluster and add creds to your [``kubeconfi
 
 ### Setup ArgoCD
 
-ArgoCD is located under ``k8s/argocd``, and can be setup by running `kubectl apply -k k8s/argocd`. With lens you can use [port-forwarding](https://docs.k8slens.dev/cluster/use-port-forwarding/) to access it in the browser. 
+ArgoCD is located under ``k8s/argocd``, and can be setup by running `kubectl apply -k k8s/argocd`. With lens you can use [port-forwarding](https://docs.k8slens.dev/cluster/use-port-forwarding/) to access it in the browser.
 
 ### Build k8s config
 
