@@ -3,8 +3,8 @@ kind: Secret
 metadata:
   name: github-creds
 stringData:
-  # The proper value for the GITHUB_TOKEN can be apply locally, cba setting up something proper for this demo 
+  # The proper value for the GH_TOKEN can be apply locally, cba setting up something proper for this demo
   credentials: |
     { 
-      "token": "${GITHUB_TOKEN}"
+      "token": "${GH_TOKEN}"
     }
