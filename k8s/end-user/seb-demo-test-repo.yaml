@@ -1,0 +1,9 @@
+apiVersion: snowsoftware.io/v1alpha1
+kind: GithubRepo
+metadata:
+  name: seb-demo-test-repo
+spec:
+  repoName: seb-demo-test-repo
+  users:
+    - username: "felixlut"
+      permission: "pull"
