@@ -47,3 +47,9 @@ spec:
                     permission:
                       type: string
                       description: "The permission to be applied to the user for the repo. Must be one of pull, push, maintain, triage or admin or the name of an existing custom repository role within the organization for organization-owned repositories"
+                    enum:
+                      - pull
+                      - push
+                      - maintain
+                      - triage
+                      - admin
