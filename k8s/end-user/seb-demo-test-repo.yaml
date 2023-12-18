@@ -6,6 +6,6 @@ spec:
   repoName: seb-demo-test-repo
   users:
     - username: "felixlut"
-      permission: "pull"
+      permission: "maintain"
     # - username: "ViktorLindgren95"
     #   permission: "admin"
