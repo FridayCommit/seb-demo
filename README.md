@@ -41,7 +41,7 @@ ArgoCD is located under ``k8s/argocd``, and can be setup by running `kubectl app
 
 ### Build k8s config
 
-You can run the following commands to make sure that it all looks correct. The environmental variables and `envsubst` will inject secrets to [`github-creds.yaml`](/k8s/crossplane-providers/github/github-creds.yaml) and [`launchdarkly-creds.yaml`](/k8s/crossplane-providers/launchdarkly/launchdarkly-creds.yaml) without committing any real secrets to code.
+You can run the following commands to make sure that it all looks correct. The environmental variables and `envsubst` will inject secrets to [`github-creds.yaml`](/k8s/crossplane-providers/github/github-creds.yaml) without committing any real secrets to code.
 
 ```sh
 export GH_TOKEN=$(gh auth token)
