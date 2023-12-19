@@ -11,8 +11,7 @@ spec:
         in_cluster_config = true
       }
     }
-    provider "tls" {}
-    provider "time" {}
+
     provider "github" {
       owner = "FridayCommit"
       token = jsondecode(file("${path.module}/github-creds.json"))["token"]

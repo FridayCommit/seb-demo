@@ -1,9 +1,9 @@
 apiVersion: apiextensions.crossplane.io/v1
 kind: CompositeResourceDefinition
 metadata:
-  name: xgithubrepo.snowsoftware.io
+  name: xgithubrepo.fridaycommit.io
 spec:
-  group: snowsoftware.io
+  group: fridaycommit.io
   names:
     kind: xGithubRepo
     plural: xgithubrepo

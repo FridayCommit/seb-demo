@@ -1,4 +1,4 @@
-apiVersion: snowsoftware.io/v1alpha1
+apiVersion: fridaycommit.io/v1alpha1
 kind: GithubRepo
 metadata:
   name: seb-demo-test-repo
