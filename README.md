@@ -68,5 +68,5 @@ You hav 2 choices here, either run `kubectl` as described below, or proceed by u
 For actually applying it all you can run the command below, but do make sure first you are actually connected to the local cluster. Do note that it will take a couple of repeated invokations before it all is ready. This is because there are CRD:s that takes some time to be installed correctly. Continue running the commads a few times over a minute or so and it should all be working:
 
 ```sh
-kustomize build --enable-helm k8s | envsubst | kubectl apply -f -
+kustomize build --enable-helm k8s/crossplane-system | envsubst | kubectl apply -f -
 ```
