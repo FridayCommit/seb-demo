@@ -1,6 +1,13 @@
 # seb-demo
 
-A small project for bootstrapping a local cluster with some baseline resources for local development
+A small project for bootstrapping a local cluster with some baseline resources for local development.
+
+Resources:
+
+* [Crossplane documentation](https://docs.crossplane.io/)
+* [Crossplane Terraform provider](https://github.com/upbound/provider-terraform)
+* [GitHub Terraform provider](https://registry.terraform.io/providers/integrations/github/latest/docs)
+* [Demo (video) - GitHub repository creation with the Cossplane Terraform provider](https://youtu.be/_c58FpT2IYI?si=0CL7v6EVtup3Il6q)
 
 ## Prerequisites
 
